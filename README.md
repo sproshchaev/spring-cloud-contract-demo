@@ -20,7 +20,7 @@
 3) main\..\application.properties
 4) BaseClass.java
 5) pom.xml: <baseClassForTests>com.prosoft.server.contract.BaseClass</baseClassForTests>
-6) test\..\resources\contracts\hello.groovy  
+6) test\..\resources\contracts\hello_contract.yaml или hello_contract.groovy или hello_contract.json  
 7) запустить сервер, проверить GET http://localhost:8080/hello  
 8) (server-Lifecycle) mvn install  
 9) проверить stub в локальном репо: .m2\repository\com\prosoft\server\1.0-SNAPSHOT\server-1.0-SNAPSHOT-stubs.jar  
