@@ -34,6 +34,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Producer (1) spring-cloud-contract -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-contract-verifier</artifactId>
@@ -63,7 +64,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <testFramework>JUNIT5</testFramework>
-                    <baseClassForTests>com.prosoft.server.contract.BaseClass</baseClassForTests>
+                    <baseClassForTests>com.prosoft.server.contract.BaseClass</baseClassForTests> <!-- Producer (2) spring-cloud-contract -->
                 </configuration>
             </plugin>
             <plugin>
