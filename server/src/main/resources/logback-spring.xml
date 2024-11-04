@@ -1,0 +1,22 @@
+<configuration>
+
+    <!-- Уровень логирования для всего приложения -->
+    <root level="INFO">
+        <!-- Консольный аппендер -->
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <!-- Настройка консольного аппендера -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- Кодировка -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- Уровень логирования для отдельных пакетов -->
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="com.prosoft" level="INFO"/>
+
+</configuration>
