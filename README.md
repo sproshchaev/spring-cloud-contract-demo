@@ -34,6 +34,7 @@ request:
   url: "/hello"
 response:
   status: 200
+  body: "Hello!"
 ```
 В формате JSON:
 ```json
@@ -44,10 +45,10 @@ response:
     "url": "/hello"
   },
   "response": {
-    "status": 200
+    "status": 200,
+    "body": "Hello!"
   }
 }
-
 ```
 
 ### Client

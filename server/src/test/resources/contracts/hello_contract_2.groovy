@@ -12,5 +12,6 @@ Contract.make {
 
     response {
         status OK()
+        body "Hello!"
     }
 }
