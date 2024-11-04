@@ -26,6 +26,30 @@
 9) проверить stub в локальном репо: .m2\repository\com\prosoft\server\1.0-SNAPSHOT\server-1.0-SNAPSHOT-stubs.jar  
 ```
 
+Аналогичный контракт для Spring Cloud Contract в формате YAML:
+```YAML
+description: "should return hello"
+request:
+  method: GET
+  url: "/hello"
+response:
+  status: 200
+```
+В формате JSON:
+```json
+{
+  "description": "should return hello",
+  "request": {
+    "method": "GET",
+    "url": "/hello"
+  },
+  "response": {
+    "status": 200
+  }
+}
+
+```
+
 ### Client
 ```txt
 1) pom.xml
