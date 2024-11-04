@@ -24,8 +24,26 @@
 7) запустить сервер, проверить GET http://localhost:8080/hello  
 8) (server-Lifecycle) mvn install  
 9) проверить stub в локальном репо: .m2\repository\com\prosoft\server\1.0-SNAPSHOT\server-1.0-SNAPSHOT-stubs.jar  
-
 ```
+
+### Client
+```txt
+1) pom.xml
+  - properties: <spring.boot.version>3.3.5</spring.boot.version>
+  - dependency: spring-boot-starter-web
+  - dependency: spring-boot-starter-test
+  - dependency: spring-cloud-starter-contract-stub-runner
+  - build, plugins: spring-boot-maven-plugin
+2) main\..\application.properties 
+3) RestTemplateConfig.java  
+4) HelloService.java  
+5) ContractIntegrationTest.java  
+6) Запустить интеграционный тест:
+   - через ContractIntegrationTest.java
+   - или (client-Lifecycle) mvn test  
+```
+
+
 
 ### References 
 
