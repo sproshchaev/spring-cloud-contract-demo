@@ -1,0 +1,11 @@
+description: "should return personalized hello for GET request with name parameter"
+request:
+  method: GET
+  url: "/hello"
+  queryParameters:
+    name: "John"
+response:
+  status: 200
+  body: "Hello, John!"
+  headers:
+    Content-Type: "application/json"

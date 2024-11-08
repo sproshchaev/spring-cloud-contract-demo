@@ -30,6 +30,15 @@ class ContractIntegrationTest {
     }
 
     @Test
+    void getStringWithNameParam() {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8100/hello?name=John";
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        LOGGER.info("Response: {}", response.getBody());
+        assertEquals("Hello, John!", response.getBody(), "Ответ должен быть 'Hello, John!'");
+    }
+
+    @Test
     void postString() {
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://localhost:8100/hello";
