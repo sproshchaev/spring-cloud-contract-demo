@@ -8,6 +8,8 @@ import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRun
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
 import org.springframework.web.client.RestTemplate;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 @AutoConfigureStubRunner(ids = {"com.prosoft:server:+:stubs:8100"}, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 class ContractIntegrationTest {
@@ -17,7 +19,10 @@ class ContractIntegrationTest {
     @Test
     void getString() {
         RestTemplate restTemplate = new RestTemplate();
-        LOGGER.info(restTemplate.getForObject("http://localhost:8100/hello", String.class));
+        String url = "http://localhost:8100/hello";
+        String response = restTemplate.getForObject(url, String.class);
+        LOGGER.info("Response: {}", response);
+        assertEquals("Hello!", response, "Ответ должен быть 'Hello!'");
     }
 
 }
