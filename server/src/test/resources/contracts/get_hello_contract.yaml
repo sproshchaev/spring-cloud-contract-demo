@@ -1,4 +1,4 @@
-description: "should return hello"
+description: "should return hello for GET request"
 request:
   method: GET
   url: "/hello"
