@@ -20,10 +20,17 @@
 3) main\..\application.properties
 4) BaseClass.java
 5) pom.xml: <baseClassForTests>com.prosoft.server.contract.BaseClass</baseClassForTests>
-6) test\..\resources\contracts\hello_contract.yaml или hello_contract.groovy или hello_contract.json  
+6) server\src\test\resources\contracts\hello_contract.yaml или hello_contract.groovy 
+   - один эндпоинт = один контракт в yaml или groovy, не допускается дублирование 
+   - контракты должны лежать в test\..\resources\contracts\
+   - в server\src\test\resources\contracts\groovy-example\ лежат примеры в groovy. Для их использования - перенести в server\src\test\resources\contracts\  
 7) запустить сервер, проверить GET http://localhost:8080/hello  
 8) (server-Lifecycle) mvn install  
-9) проверить stub в локальном репо: .m2\repository\com\prosoft\server\1.0-SNAPSHOT\server-1.0-SNAPSHOT-stubs.jar  
+9) проверить созданный stub в локальном репо: .m2\repository\com\prosoft\server\1.0-SNAPSHOT\server-1.0-SNAPSHOT-stubs.jar  
+10) проверить сгенерированные классы: 
+  - server\target\generated-test-sources\contracts\com.prosoft.server.contract\
+    - ContractVerifierTest
+    - GroovyTest
 ```
 
 Аналогичный контракт для Spring Cloud Contract в формате YAML:
@@ -35,20 +42,6 @@ request:
 response:
   status: 200
   body: "Hello!"
-```
-В формате JSON:
-```json
-{
-  "description": "should return hello",
-  "request": {
-    "method": "GET",
-    "url": "/hello"
-  },
-  "response": {
-    "status": 200,
-    "body": "Hello!"
-  }
-}
 ```
 
 ### Client
@@ -73,5 +66,6 @@ response:
 ### References 
 
 `1.` Spring Cloud Contract https://spring.io/projects/spring-cloud-contract
-`2.` Better Integration Testing With Spring Cloud Contract https://developer.okta.com/blog/2022/02/01/spring-cloud-contract  
+`2.` Introducing Spring Cloud Contract https://docs.spring.io/spring-cloud-contract/reference/getting-started/introducing-spring-cloud-contract.html
+`3.` Better Integration Testing With Spring Cloud Contract https://developer.okta.com/blog/2022/02/01/spring-cloud-contract  
 
