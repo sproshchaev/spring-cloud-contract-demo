@@ -1,0 +1,8 @@
+description: "should return personalized hello for POST request"
+request:
+    method: POST
+    url: "/hello"
+    body: "John Doe"
+response:
+    status: 200
+    body: "Hello, John Doe!"
