@@ -10,7 +10,6 @@ public class Controller {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Controller.class);
 
-
     @GetMapping("/hello")
     public String hello() {
         LOGGER.info("incoming request");
